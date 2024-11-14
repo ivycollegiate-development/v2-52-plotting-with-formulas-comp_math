@@ -1,0 +1,24 @@
+import matplotlib.pyplot as plt 
+import numpy as np 
+G = 6.674e-11
+m1 = 1000
+m2 = 500
+m3=2000
+m4=500
+m5=3000
+m6=500
+distance = np.linspace(1, 10, 100)
+forece1 = G * (m1*m2)/(distance**2)
+forece2 = G * (m3*m4)/(distance**2)
+forece3 = G * (m5*m6)/(distance**2)
+plt.figure(figsize=(10, 6))
+plt.plot(distance, forece1, 'b-', label=f'Masses: {m1}kg and {m2}kg')
+plt.plot(distance, forece2, 'r-', label=f'Masses: {m3}kg and {m4}kg')
+plt.plot(distance, forece3, 'g-', label=f'Masses: {m5}kg and {m6}kg')
+plt.xlabel('Distances(m)')
+plt.ylabel('Gravational Force(N)')
+plt.title('Gravational Forece vs Distance')
+plt.grid(True, alpha=0.3)
+plt.yscale('log')
+plt.legend()
+plt.show()
